@@ -49,12 +49,3 @@ class ContactHelper:
         self.filling_form(new_contact_data)
         # submit
         wd.find_element_by_name("update").click()
-
-    def edit_first_contact(self, contact):
-        wd = self.app.wd
-        self.select_first_contact()
-        # edit contact
-        wd.find_element_by_xpath("(//img[@alt='Edit'])").click()
-        self.filling_form(contact)
-        # submit edition
-        wd.find_element_by_name("update").click()
