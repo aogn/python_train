@@ -49,3 +49,7 @@ class ContactHelper:
         self.filling_form(new_contact_data)
         # submit
         wd.find_element_by_name("update").click()
+
+    def count(self):
+        wd = self.app.wd
+        return len (wd.find_elements_by_name("selected[]"))
