@@ -20,6 +20,8 @@ class ContactHelper:
         self.change_field_value("work", contact.work_phone)
         self.change_field_value("fax", contact.fax_phone)
         self.change_field_value("email", contact.email)
+        self.change_field_value("email2", contact.email2)
+        self.change_field_value("email3", contact.email3)
         self.change_field_value("phone2", contact.secondary_phone)
 
     def change_field_value(self, field_name, text):
@@ -95,8 +97,10 @@ class ContactHelper:
                 text_first = cells[2].text
                 id = cells[0].find_element_by_tag_name("input").get_attribute("value")
                 all_phones = cells[5].text
-                self.contact_cache.append(Contact(first_name=text_first, last_name=text_last, id=id,
-                                                  all_phones_from_home_page=all_phones))
+                all_emails = cells[4].text
+                address = cells[3].text
+                self.contact_cache.append(Contact(first_name=text_first, last_name=text_last, address=address, id=id,
+                                                  all_phones_from_home_page=all_phones, all_emails_from_home_page=all_emails))
         return list(self.contact_cache)
 
     def open_contact_to_edit_by_index(self, index):
@@ -123,7 +127,12 @@ class ContactHelper:
         mobile_phone = wd.find_element_by_name("mobile").get_attribute("value")
         work_phone = wd.find_element_by_name("work").get_attribute("value")
         secondary_phone = wd.find_element_by_name("phone2").get_attribute("value")
-        return Contact(first_name=first_name, last_name=last_name, id=id,
+        email = wd.find_element_by_name("email").get_attribute("value")
+        email2 = wd.find_element_by_name("email2").get_attribute("value")
+        email3 = wd.find_element_by_name("email3").get_attribute("value")
+        address = wd.find_element_by_name("address").get_attribute("value")
+        return Contact(first_name=first_name, last_name=last_name, id=id, address=address,
+                       email=email, email2=email2, email3=email3,
                        home_phone=home_phone, mobile_phone=mobile_phone,
                        work_phone=work_phone, secondary_phone=secondary_phone)
 
