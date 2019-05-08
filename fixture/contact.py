@@ -39,6 +39,16 @@ class ContactHelper:
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         self.contact_cache = None
 
+    def creation_with_group(self, contact, group_id):
+        wd = self.app.wd
+        wd.find_element_by_link_text("add new").click()
+        self.filling_form(contact)
+        wd.find_element_by_name("new_group").click()
+        wd.find_element_by_css_selector("option[value='%s']" % group_id).click()
+        # submit contact creation
+        wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
+        self.contact_cache = None
+
     def delete_first_contact(self):
         self.delete_contact_by_index(0)
 
@@ -175,3 +185,11 @@ class ContactHelper:
                        work_phone=work_phone, secondary_phone=secondary_phone)
 
 
+    def add_contact_to_group(self, id):
+        wd = self.app.wd
+        self.open_contact_to_edit_by_id(id)
+        # fill form
+
+        # submit
+        wd.find_element_by_name("update").click()
+        self.contact_cache = None
