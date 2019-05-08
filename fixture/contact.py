@@ -84,6 +84,15 @@ class ContactHelper:
         wd.find_element_by_name("update").click()
         self.contact_cache = None
 
+    def modify_contact_by_id(self, new_contact_data, id):
+        wd = self.app.wd
+        self.open_contact_to_edit_by_id(id)
+        # fill form
+        self.filling_form(new_contact_data)
+        # submit
+        wd.find_element_by_name("update").click()
+        self.contact_cache = None
+
     def open_home_page(self):
         wd = self.app.wd
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_name("searchstring")) > 0):
@@ -118,6 +127,13 @@ class ContactHelper:
         wd = self.app.wd
         self.app.open_home_page()
         row = wd.find_elements_by_name("entry")[index]
+        cell = row.find_elements_by_tag_name("td")[7]
+        cell.find_element_by_tag_name("a").click()
+
+    def open_contact_to_edit_by_id(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        row = wd.find_elements_by_name("entry")[id]
         cell = row.find_elements_by_tag_name("td")[7]
         cell.find_element_by_tag_name("a").click()
 
