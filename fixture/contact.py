@@ -183,12 +183,11 @@ class ContactHelper:
         return Contact(home_phone=home_phone, mobile_phone=mobile_phone,
                        work_phone=work_phone, secondary_phone=secondary_phone)
 
-
-    def add_contact_to_group(self, id):
+    def add_contact_to_group(self, id, group_id):
         wd = self.app.wd
-        self.open_contact_to_edit_by_id(id)
-        # fill form
+        self.select_contact_by_id(id)
+        wd.find_element_by_css_selector("select[name='to_group']").click()
+        wd.find_element_by_css_selector("option[value='%s']" % group_id).click()
+        wd.find_element_by_name("add").click()
+        self.open_home_page()
 
-        # submit
-        wd.find_element_by_name("update").click()
-        self.contact_cache = None
