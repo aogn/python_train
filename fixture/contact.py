@@ -144,7 +144,7 @@ class ContactHelper:
         wd = self.app.wd
         self.app.open_home_page()
         self.select_contact_by_id(id)
-        wd.find_element_by_xpath("(//img[@alt='Edit'])[2]").click()
+        wd.find_element_by_css_selector("a[href='edit.php?id=%s']" %id).click()
 
     def open_contact_view_by_index(self, index):
         wd = self.app.wd
