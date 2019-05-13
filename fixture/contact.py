@@ -1,6 +1,7 @@
 
 from models.contact import Contact
 import re
+from selenium.webdriver.support.select import Select
 
 class ContactHelper:
 
@@ -187,7 +188,7 @@ class ContactHelper:
         wd = self.app.wd
         self.select_contact_by_id(id)
         wd.find_element_by_css_selector("select[name='to_group']").click()
-        wd.find_element_by_css_selector("option[value='%s']" % group_id).click()
+        Select(wd.find_element_by_name('to_group')).select_by_value(group_id)
         wd.find_element_by_name("add").click()
         self.open_home_page()
 
