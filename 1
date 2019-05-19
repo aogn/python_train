@@ -1,0 +1,51 @@
+Traceback (most recent call last):
+  File "c:\python37-32\Lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "c:\python37-32\Lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\Alena\PycharmProjects\python_train\env\Scripts\py.test.exe\__main__.py", line 9, in <module>
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\config.py", line 50, in main
+    config = _prepareconfig(args, plugins)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\config.py", line 161, in _prepareconfig
+    pluginmanager=pluginmanager, args=args)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 617, in __call__
+    return self._hookexec(self, self._nonwrappers + self._wrappers, kwargs)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 222, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 216, in <lambda>
+    firstresult=hook.spec_opts.get('firstresult'),
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 196, in _multicall
+    gen.send(outcome)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\helpconfig.py", line 68, in pytest_cmdline_parse
+    config = outcome.get_result()
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 76, in get_result
+    raise ex[1].with_traceback(ex[2])
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 180, in _multicall
+    res = hook_impl.function(*args)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\config.py", line 944, in pytest_cmdline_parse
+    self.parse(args)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\config.py", line 1109, in parse
+    self._preparse(args, addopts=addopts)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\config.py", line 1072, in _preparse
+    self.pluginmanager.load_setuptools_entrypoints('pytest11')
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 403, in load_setuptools_entrypoints
+    self.register(plugin, name=ep.name)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\config.py", line 251, in register
+    ret = super(PytestPluginManager, self).register(plugin, name)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 254, in register
+    hook._maybe_apply_history(hookimpl)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 650, in _maybe_apply_history
+    res = self._hookexec(self, [method], kwargs)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 222, in _hookexec
+    return self._inner_hookexec(hook, methods, kwargs)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 216, in <lambda>
+    firstresult=hook.spec_opts.get('firstresult'),
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 201, in _multicall
+    return outcome.get_result()
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 76, in get_result
+    raise ex[1].with_traceback(ex[2])
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 180, in _multicall
+    res = hook_impl.function(*args)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\allure_pytest\plugin.py", line 44, in pytest_addoption
+    severities = [x.value for x in list(allure.severity_level)]
+AttributeError: module 'allure' has no attribute 'severity_level'

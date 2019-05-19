@@ -1,0 +1,62 @@
+collected 6 items
+
+tests\test_add_group.py E
+INTERNALERROR> Traceback (most recent call last):
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\main.py", line 100, in wrap_session
+INTERNALERROR>     session.exitstatus = doit(config, session) or 0
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\main.py", line 138, in _main
+INTERNALERROR>     config.hook.pytest_runtestloop(session=session)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 617, in __call__
+INTERNALERROR>     return self._hookexec(self, self._nonwrappers + self._wrappers, kwargs)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 222, in _hookexec
+INTERNALERROR>     return self._inner_hookexec(hook, methods, kwargs)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 216, in <lambda>
+INTERNALERROR>     firstresult=hook.spec_opts.get('firstresult'),
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 201, in _multicall
+INTERNALERROR>     return outcome.get_result()
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 76, in get_result
+INTERNALERROR>     raise ex[1].with_traceback(ex[2])
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 180, in _multicall
+INTERNALERROR>     res = hook_impl.function(*args)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\main.py", line 161, in pytest_runtestloop
+INTERNALERROR>     item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 617, in __call__
+INTERNALERROR>     return self._hookexec(self, self._nonwrappers + self._wrappers, kwargs)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 222, in _hookexec
+INTERNALERROR>     return self._inner_hookexec(hook, methods, kwargs)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 216, in <lambda>
+INTERNALERROR>     firstresult=hook.spec_opts.get('firstresult'),
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 201, in _multicall
+INTERNALERROR>     return outcome.get_result()
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 76, in get_result
+INTERNALERROR>     raise ex[1].with_traceback(ex[2])
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 180, in _multicall
+INTERNALERROR>     res = hook_impl.function(*args)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\runner.py", line 62, in pytest_runtest_protocol
+INTERNALERROR>     runtestprotocol(item, nextitem=nextitem)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\runner.py", line 81, in runtestprotocol
+INTERNALERROR>     nextitem=nextitem))
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\runner.py", line 160, in call_and_report
+INTERNALERROR>     report = hook.pytest_runtest_makereport(item=item, call=call)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 617, in __call__
+INTERNALERROR>     return self._hookexec(self, self._nonwrappers + self._wrappers, kwargs)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 222, in _hookexec
+INTERNALERROR>     return self._inner_hookexec(hook, methods, kwargs)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\__init__.py", line 216, in <lambda>
+INTERNALERROR>     firstresult=hook.spec_opts.get('firstresult'),
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\pluggy\callers.py", line 196, in _multicall
+INTERNALERROR>     gen.send(outcome)
+INTERNALERROR>   File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\allure_pytest\listener.py", line 197, in pytest_runtest_makereport
+INTERNALERROR>     if report.caplog:
+INTERNALERROR> AttributeError: 'TestReport' object has no attribute 'caplog'
+
+========================== 1 error in 11.26 seconds ===========================
+Exception ignored in: <generator object LoggingPlugin.pytest_runtest_teardown at 0x03BFAA30>
+Traceback (most recent call last):
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\logging.py", line 403, in pytest_runtest_teardown
+    yield
+  File "c:\python37-32\Lib\contextlib.py", line 130, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "c:\users\alena\pycharmprojects\python_train\env\lib\site-packages\_pytest\logging.py", line 381, in _runtest_for
+    del item.catch_log_handler
+AttributeError: catch_log_handler
